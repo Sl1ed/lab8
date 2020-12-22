@@ -1,0 +1,45 @@
+﻿@inherits System.Web.Mvc.WebViewPage
+@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Информация о специальности</title>
+</head>
+<body background="https://static-cse.canva.com/blob/194901/Rainbow-Gradient-Pink-and-Purple-Zoom-Virtual-Background.png">
+<div>
+    <h4>Изменение описания</h4>
+    <form method="post" action="">
+        <input type="hidden" value="@ViewBag.SpecId" name="SpecId" />
+        <table>
+            <tr>
+                <td><p>Введите новое описание </p></td>
+                <td>
+                    <input type="text" name="Opisanie" />
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="submit" value="Поменять" />
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <a href="/Home">Перейти на главную страницу</a>
+                </td>
+            </tr>
+            @if (ViewBag.Success != null)
+            {
+                <tr>
+                    <td>
+                        @ViewBag.Success
+                    </td>
+                </tr>
+            }
+        </table>
+    </form>
+</div>
+</body>
+</html>

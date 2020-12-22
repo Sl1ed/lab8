@@ -1,0 +1,32 @@
+﻿@inherits System.Web.Mvc.WebViewPage
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Специальности</title>
+</head>
+<body background="https://static-cse.canva.com/blob/194901/Rainbow-Gradient-Pink-and-Purple-Zoom-Virtual-Background.png">
+    <div>
+        <h4>Специальности</h4>
+        <table>
+            <tr>
+                <td><p>Имя</p></td>
+                <td><p>Описание</p></td>
+            </tr>
+
+            @foreach (var special in ViewBag.Specialnosti)
+            {
+                <tr>
+                    <td><p>@special.Name</p></td>
+                    <td><p>@special.Opisanie</p></td>
+                    <td><p><a href="/Home/Change/@special.Id">Поменять информацию</a></p></td>
+                </tr>
+            }
+        </table>
+    </div>
+</body>
+</html>
